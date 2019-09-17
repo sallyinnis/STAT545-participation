@@ -1,2 +1,10 @@
 # STAT545-participation
-repo for participation in 545
+
+# Welcome to my participation repository
+  * This repository is for UBC STAT545 class and will contain class participation and some assignment files. 
+
+## Some info on me! 
+  1. My name is Sally!
+  2. I am a *soon to be* PhD student in the Mining Engineering Department 
+  3. My thesis will focus on risk mapping and management of tailings storage facilities 
+   * If you want a great website for information on tailings dams and their failures, click [here](http://www.tailings.info/)
