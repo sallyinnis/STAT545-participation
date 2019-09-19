@@ -125,37 +125,41 @@ Return to guide at section 6.7.
 
 ## `filter()` (10 min)
 
-1. Only take data with population greater than 100 million.
+1. Only take data with population greater than 100 million. SHORT CUT FOR PIPE OPERATOR = cmd + shift + m
 
 ```{r}
-gapminder %>%
-  filter(FILL_THIS_IN)
+gapminder %>% 
+  filter(pop > 100000000)
 ```
 
 2. Your turn: of those rows filtered from step 1., only take data from Asia.
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop > 100000000) %>% 
+  filter(continent == "Asia")
 ```
 
 3. Repeat 2, but take data from countries Brazil, and China. 
 
 ```{r}
 gapminder %>%
-  filter(FILL_THIS_IN)
+  filter(pop > 100000000,
+         country == "China" | country == "Brazil")
 ```
 
 ## `mutate()` (10 min)
 
 Let's get: 
 
-- GDP by multiplying GPD per capita with population, and
+- GDP by multiplying GPD per capita with population,
 - GDP in billions, named (`gdpBill`), rounded to two decimals.
+- mutate creates a new column
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(gdpBill = round(gdpPercap*pop/1000000000, digits = 2))
+  
 ```
 
 Notice the backwards compatibility! No need for loops!
@@ -164,7 +168,7 @@ Try the same thing, but with `transmute` (drops all other variables).
 
 ```{r}
 gapminder %>%
-  transmute(FILL_THIS_IN)
+  transmute(gdpBill = (gdpPercap*pop/1000000000))
 ```
 
 The `if_else` function is useful for changing certain elements in a data frame.
@@ -173,12 +177,14 @@ Example: Suppose Canada's 1952 life expectancy was mistakenly entered as 68.8 in
 
 ```{r}
 gapminder %>%
-  mutate(FILL_THIS_IN)
+  mutate(lifeExp = if_else(country == "Canada" & year == 1952, 70, lifeExp))
 ```
 
 Your turn: Make a new column called `cc` that pastes the country name followed by the continent, separated by a comma. (Hint: use the `paste` function with the `sep=", "` argument).
 
 ```{r}
+gapminder %>% 
+  mutate(cc = paste(country, continent, sep = ","))
 ```
 
 These functions we've seen are called __vectorized functions__.
@@ -192,6 +198,12 @@ Knit, commit, push!
 If there's time remaining, we'll practice with these three exercises. I'll give you 1 minute for each, then we'll go over the answer.
 
 1. Take all countries in Europe that have a GDP per capita greater than 10000, and select all variables except `gdpPercap`. (Hint: use `-`).
+
+```{r}
+gapminder%>%
+  select()
+```
+
 
 2. Take the first three columns, and extract the names.
 
