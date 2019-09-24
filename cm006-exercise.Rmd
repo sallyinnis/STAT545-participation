@@ -197,11 +197,60 @@ Knit, commit, push!
 
 If there's time remaining, we'll practice with these three exercises. I'll give you 1 minute for each, then we'll go over the answer.
 
-1. Take all countries in Europe that have a GDP per capita greater than 10000, and select all variables except `gdpPercap`. (Hint: use `-`).
+1. Take all countries in Europe that have a GDP per capita greater than 10000, and select gapminder %>% 
+  group_by(continent, year) variables except `gdpPercap`. (Hint: use `-`).
 
 ```{r}
 gapminder%>%
   select()
+```
+
+
+```{r}
+gapminder %>% 
+  summarize(mu    = mean(lifeExp),
+            sigma = sd(lifeExp))
+```
+
+groups all continents together- then year but it does not arrange. 
+
+```{r}
+gapminder %>% 
+  group_by(continent, year)
+```
+
+Group by variables that don't exist. 
+
+```{r}
+gapminder %>% 
+  group_by(smallLifeExp = lifeExp < 60)
+```
+
+Function below - groups by continent - the output has put the mean and the sd for the continent in each year
+```{r}
+gapminder %>% 
+  group_by(continent, year) %>% 
+  summarize(mu    = mean(lifeExp),
+            sigma = sd(lifeExp))
+```
+
+```{r}
+gapminder %>% 
+  count(country)
+```
+
+```{r}
+gap_inc <- gapminder %>% 
+  arrange(year) %>% 
+  group_by(country) %>%
+  mutate(gdpPercap_inc = gdpPercap - lag(gdpPercap))
+DT::datatable(gap_inc)
+```
+
+```{r}
+gap_inc %>% 
+  tidyr::drop_na() %>% 
+DT::datatable(gap_inc)
 ```
 
 
