@@ -26,8 +26,9 @@ This worksheet contains exercises aimed for practice with `dplyr`.
 
 ```{r}
 gapminder %>% 
-  group_by(continent,year, country) %>% 
-  summarize(min_life = min(lifeExp)) %>% 
+  group_by(continent,year )%>% 
+  summarize(min_life = min(lifeExp),
+            country = country[lifeExp == min_life]) %>% 
   arrange(min_life)
   
 ```
@@ -42,9 +43,16 @@ DT::datatable()
 group_by(country) %>% 
 ```
 
+
 ```{r}
+gapminder %>% 
+  group_by(country) %>% 
+  arrange(year) %>% 
+  mutate(rel_growth = pop - first(pop)) %>% 
+DT::datatable()
 
 ```
+
 
 
 3. Determine the country that experienced the sharpest 5-year drop in life expectancy, in each continent, sorted by the drop, by rearranging the following lines of code. Ensure there are no `NA`'s. Instead of using `lag()`, use the convenience function provided by the `tsibble` package, `tsibble::difference()`:
@@ -54,16 +62,22 @@ drop_na() %>%
 ungroup() %>% 
 arrange(year) %>% 
 filter(inc_life_exp == min(inc_life_exp)) %>% 
-gapminder %>% 
+
 mutate(inc_life_exp = FILL_THIS_IN) %>% 
 arrange(inc_life_exp) %>% 
-group_by(country) %>% 
 group_by(continent) %>% 
 knitr::kable()
 ```
 
 ```{r}
-
+gapminder %>% 
+  group_by(country) %>% 
+  arrange(year) %>% 
+  mutate(inc_life_exp = difference(lifeExp)) %>% 
+  drop_na(inc_life_exp) %>% 
+  ungroup(country) %>% 
+  group_by(continent) %>% 
+  filter(inc_life_exp == min(inc_life_exp))
 ```
 
 
