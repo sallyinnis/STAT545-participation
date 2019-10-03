@@ -146,6 +146,8 @@ experiment <- tibble(
   measurement_1 = runif(6),
   measurement_2 = runif(6)
 )
-experiment %>% expand(name, trt, rep)
+experiment %>% complete(nesting(name, trt), rep)
 ```
 
+Complete function - all possible combinations 
+use nest functions to elimate some NAs and only show with name and trt? If you want to see the differences then remove the nesting (...)
