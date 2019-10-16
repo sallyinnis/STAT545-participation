@@ -1,0 +1,74 @@
+---
+title: "HW03 version 2"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(tidyverse)
+library(gapminder)
+library(ggridges)
+library(scales)
+```
+**Note: I went to office hours to try and solve my knitting issue. It was resolved, and now has come up again. I will ask the TAs again next office hours.
+This is task two, where I get the maximum and minimum GDP per capita for all continents. The year for minimum GDP was 1952 for Asia, Europe, and Oceania. It was 2002 and 2007 in Africa and the Americas, respectively. The minimum GDP was 10039.59 for Oceania, which is much higher than 241.17 for Africa. The maximum GDP of all of the countries was in the Asia in 2007, with 113523.13 in Kuwait, in 1957. I have made a boplot showing the maximum and minimum GDP per continent. I have also made seperate maximum and minimum graphs which show more detailed numbers, which looks more beautiful, but which I can't combine. I tried to make a column graph that combined the two variables, but I could not figure out how to tell R that I wanted the X axis to be a combination of the minimum and maximum variables.
+```{r}
+gapminder %>% 
+  group_by(continent) %>% 
+  summarise(MinGDP=min(gdpPercap),Mincountry=country[gdpPercap==MinGDP],Minyear=year[gdpPercap==MinGDP],MaxGDP=max(gdpPercap),Maxcountry=country[gdpPercap==MaxGDP],Maxyear=year[gdpPercap==MaxGDP])%>% 
+  mutate(Range=MaxGDP-MinGDP)
+  boxplot(gdpPercap~continent, data=gapminder, notch=TRUE,
+  col=(c("gold","darkgreen")),
+  main="GDP vs several continents", xlab="Continents", ylab="GDPperCapita")
+  
+#OR you could look at the max and min seperately, but more closely using the following two graphs:
+ggplot(gapminder, aes((MinGDP=min(gdpPercap)),continent,fill=continent)) +
+ggridges::geom_density_ridges()+labs(x="Minimum GDP",y="Continent")
+ggplot(gapminder, aes(y =continent))+
+  ggridges::geom_density_ridges(aes((MinGDP=min(gdpPercap))), fill="red")+
+  ggridges::geom_density_ridges(aes((MaxGDP=max(gdpPercap)),continent,fill=continent), alpha=0.2)
+  ggplot(aes(y = YearFct)) +
+  geom_density_ridges(
+    aes(x = Percent, fill = paste(YearFct, Option)), 
+    alpha = .8, color = "white", from = 0, to = 100
+  ) +
+  labs(
+ggplot(gapminder, aes((MaxGDP=max(gdpPercap)),continent, fill=continent)) +
+ggridges::geom_density_ridges()+labs(x="Maximum GDP",y="Continent")
+```
+Task5: Here, I showed the life expectancy changes over time by continent. I did this by showing the difference between two years' life expectancy, over many years. I graphed this by coloring based on continent, so you could see a pattern over many years by following a single line per continent. I changed the figure size to an appropriate height and width. There are many massive spikes as there are decreases and increases in population in several continents.
+```{r, fig.width = 10, fig.height = 30}
+library(gapminder)
+library(tidyverse)
+gapminder5<-gapminder %>%
+  group_by(continent)%>%
+  select(continent,lifeExp,year)%>%
+  mutate(laglifeExp = lag(lifeExp,1)) %>%
+  mutate (ChangeLifeExp = lifeExp-laglifeExp)
+print(gapminder5)
+gapminder5 %>%
+  ggplot(aes(year, ChangeLifeExp, color=continent)) +
+  geom_line(aes(group = continent), alpha = 0.5) +
+  ylab("Change in Life Expectancy")+xlab("Year")
+ 
+```
+Task 3-Look at the spread with in continents. I am going to show life expectancy. This gives you the mean, median, standard deciation, and interquartile range. I also mutated it, to show if mean is larger than the 25% range, or less than the 75% range, just for interest's sake. This gives you a true or false statement. Finally, I have added a column with the mean life expectancy spread. I used a boxplot to demonstrate this data, with mean, median, and Interquartile range.  
+```{r}
+GapminderPercap<-gapminder %>%
+  group_by(continent)%>%
+  mutate(mean=mean(lifeExp))%>%
+  summarise(median=median(lifeExp),standarddev=sd(lifeExp),mean=mean(lifeExp),InterquartileRange=IQR(lifeExp))%>%
+  mutate(mean > quantile(mean, 0.25), 
+                mean < quantile(mean, 0.75))
+GapminderPercap %>% spread(continent,mean)
+print(GapminderPercap)
+ggplot(gapminder, aes(continent, lifeExp)) +
+  geom_boxplot()+
+    labs(x = "Continent",y = "Life Expectancy",
+      title = "Life Expectancy per Continent",
+      subtitle = "based on gapminder data")
+```
