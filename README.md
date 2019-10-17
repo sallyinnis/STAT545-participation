@@ -1,7 +1,8 @@
 # STAT545-participation
 
 # Welcome to my participation repository
-  * This repository is for UBC STAT545 class and will contain class participation and some assignment files. 
+  * This repository is for UBC STAT545 2019 term 1 class and will contain class participation markdown and knitted files.
+  * CM = "Class Meeting"
 
 ## Some info on me! 
   1. My name is Sally!
