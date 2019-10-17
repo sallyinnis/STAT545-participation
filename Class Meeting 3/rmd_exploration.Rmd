@@ -1,0 +1,32 @@
+---
+title: "rmd_exploration"
+output:
+  pdf_document: TRUE
+  always_allow_html: true
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo = FALSE, warning = FALSE}
+library(gapminder)
+library(tibble)
+library(DT)
+```
+
+```{r}
+gapminder
+```
+
+```{r}
+#as_tibble::as_tibble(mtcars)
+```
+
+```{r}
+DT::datatable(mtcars)
+#There are 32 rows in the dataset
+```
+
+## Datatable allows for selection and filtration whereas tibble does not. 

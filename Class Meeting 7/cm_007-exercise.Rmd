@@ -1,9 +1,10 @@
 ---
-title: "cm007 Exercises: Practice with `dplyr`"
-output: 
+title: 'cm007 Exercises: Practice with `dplyr`'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
     theme: paper
+  pdf_document: default
 ---
 
 <!---The following chunk allows errors when knitting--->

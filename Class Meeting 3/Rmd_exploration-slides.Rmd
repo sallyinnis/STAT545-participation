@@ -1,0 +1,39 @@
+---
+title: "rmd_exploration-slides"
+output:
+  beamer_presentation: default
+  ioslides_presentation: default
+    always_allow_html: true
+    keep_md: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r}
+library(gapminder)
+library(tibble)
+library(DT)
+```
+
+---
+### Gapminder as tibble
+```{r}
+datatable(as_tibble(gapminder))
+```
+
+
+##MTCars
+```{r}
+mtcars
+```
+
+##Datatable 
+```{r}
+DT::datatable(mtcars)
+#There are 32 rows in the dataset
+```
+
+## Datatable allows for selection and filtration whereas tibble does not. 

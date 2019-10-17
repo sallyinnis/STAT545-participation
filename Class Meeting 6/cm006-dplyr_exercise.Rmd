@@ -1,5 +1,6 @@
 ---
 title: 'cm006: `dplyr` Exercise'
+author: Sally Innis
 output:
     html_document:
       keep_md: true
