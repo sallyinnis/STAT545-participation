@@ -19,8 +19,8 @@
 * Provide the R script cm002_R_exploration.R file: *see folder Class Meeting 2*
 ### Class Meeting 3 Authoring
 * Populate navigating_github.md document with some markdown features: *see folder Class Meeting 3*
-* Convert the .md file into both pdf and html: click here 
-* Upload rmd_exploration.Rmd and its output formats (md, pdf and html)
+* Convert the .md file into both pdf and [html: click here] (https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%203/navigating_github.html)
+* [Upload rmd_exploration.Rmd and its output formats (md, pdf and html)](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%203/rmd_exploration.html)
 * [Upload rmd_exploration-slides.Rmd both as Rmd and html(or pdf) formats]( https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%203/Rmd_exploration-slides.html)
 ### Class Meeting 4 The version control workflow
 * nothing is required for submisison
@@ -28,10 +28,10 @@
 * Complete cm005-ggplot_intro.Rmd worksheet.
 * Submit .Rmd file along with knitted version of your choice (pdf, md or html format)
 ### Class Meeting 6 Intro to data wrangling, Part I
-* Complete cm006-dplyr_exercise.Rmd worksheet. $\checkmark$
+* Complete cm006-dplyr_exercise.Rmd worksheet. 
 * Submit .Rmd file along with knitted version of your choice (pdf, md or html format)
 ### Class Meeting 7 Intro to data wrangling, Part II
-* Complete cm007-exercise.Rmd worksheet. $\checkmark$
+* Complete cm007-exercise.Rmd worksheet. 
 * Submit .Rmd file along with knitted version of your choice (pdf, md or html format)
 ### Class Meeting 8 Intro to plotting with ggplot2, Part II
 * Complete cm008-exercise.Rmd worksheet. $\checkmark$
