@@ -1,15 +1,17 @@
 # STAT545-participation
 
-## Welcome to my participation repository
+### Welcome to my participation repository
   * This repository is for UBC STAT545 2019 term 1 class and will contain class participation markdown and knitted files.
   * CM = "Class Meeting"
 
-## Some info on me! 
+### Some info on me! 
   1. My name is Sally!
   2. I am a *soon to be* PhD student in the Mining Engineering Department 
   3. My thesis will focus on risk mapping and management of tailings storage facilities 
    * If you want a great website for information on tailings dams and their failures, click [here](http://www.tailings.info/)
 
+## Hi participation markers! 
+#### Below are the requirements and the links to each html or pdf created by class meeting worksheets. Where there were .R or .md files only, the links redirect you to the folder containing the required documents. Happy marking. 
 
 ### Class Meeting 1 Introduction to STAT 545 and GitHub
 * Register a GitHub account :heavy_check_mark:
