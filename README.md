@@ -25,7 +25,7 @@
 ### Class Meeting 4 The version control workflow
 * nothing is required for submisison
 ### Class Meeting 5 Intro to plotting with ggplot2, Part I
-* [Complete cm005-ggplot_intro.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/
+* [Complete cm005-ggplot_intro.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%205/cm005-ggplot_into.pdf)
 ### Class Meeting 6 Intro to data wrangling, Part I
 * [Complete cm006-dplyr_exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%206/cm006-dplyr_exercise.html)
 ### Class Meeting 7 Intro to data wrangling, Part II
@@ -35,13 +35,13 @@
 ### Class Meeting 9 Tidy Data and Pivoting
 * [Complete cm009-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%209/CM-%20009%20data%20and%20pivoting.nb.html)
 ### Class Meeting 10 Tibble Joins
-* [Complete cm010-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/
+* [Complete cm010-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%2010/CM_010.pdf)
 ### Class Meeting 11 File input/output (I/O)
 * Complete the steps described in lesson 11: *See Class Meeting 11 Folder*
 * Submit .R script with your work :heavy_check_mark:
 ### Class Meeting 12 Working with factors in R
-* [Complete cm012-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/
+* [Complete cm012-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%2012/cm012_FactorsExercise.pdf)
 ### Class Meeting 13 Effective Visualizations
 * [Complete cm013-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting13/Cm013.pdf)
 ### Class Meeting 14 The Model-Fitting Paradigm in R
-* [Complete cm014-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/
+* [Complete cm014-exercise.Rmd worksheet](https://sallyinnis.github.io/STAT545-participation/Class%20Meeting%2014/CM014.nb.html)
